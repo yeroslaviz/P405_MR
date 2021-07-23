@@ -1,0 +1,158 @@
+---
+title: "P405_Analysis"
+author: "AY"
+date: "7/21/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Introduction
+
+Again, not much is known, as the data is just there. 
+
+## create pathes
+
+
+```{r, engine='bash', eval = FALSE}
+scripts="/home/yeroslaviz/poolFolders/pool-bcfngs/scripts"
+starindex="/home/yeroslaviz/poolFolders/pool-bcfngs/genomes/Mmu.GrCm38/starIndex2.7.7a/"
+gtf="/home/yeroslaviz/poolFolders/pool-bcfngs/genomes/Mmu.GrCm38.gtf"
+
+basis="/home/yeroslaviz/poolFolders/pool-bcfngs/fastq_files/P405/P405_20210706_PM_MR"
+fastqc="$basis/fastqcResults"
+rawdata="$basis/conc.fastq"
+results="$basis/results"
+bamFiles="$basis/mapping/Mmu.GrCm38/star/"
+quant="$basis/quantification"
+```
+
+# Quality control using `FastQC`
+
+For the QC of the raw samples we used here the tool `fastQC` (version 011.7, @fastqc). The tool was ran as part of our NGS core facility pipeline and is done automatically By Kim.
+
+The results of the fastqc run  can be summarized by the python script `CheckFastqResults.py`.
+After finishing the run, a summary files is created and the results are being visualized by colors.
+
+```{r QC, engine='bash', eval=FALSE}
+cd $fastqc # change to the folder of the fastqc output files
+
+python $scripts/CheckFastqResults.py # create a csv file of summary for the results
+```
+
+A header row the file was added with the different tests run by `fastqc`:
+
+Using `sed -i '1^/...' ` the line below is added at the beginning of the file w.o. opening it.
+
+```{r, engine='bash', eval=FALSE}
+sed '1s/^/Name,Basic_Statistics,Per_base_sequence_quality,Per_tile_sequence_quality,Per_sequence_quality_scores,Per_base_sequence_content,Per_sequence_GC_content,Per_base_N_content,Sequence_Length_Distribution,Sequence_Duplication_Levels,Overrepresented_sequences,Adapter_Content,Kmer_Content \n/ ' all_mod_scores.csv >$results/all_mod_scores.csv
+rm all_mod_scores.csv
+cd $results
+```
+  
+This was done by manually opening the file (using `vi`) and adding the above row at the beginning.
+
+and the csv file was read into R to create a heatmap
+
+this was done by using the script QC.plot.R
+
+```{r, engine='bash', eval=FALSE}
+Rscript $scripts/QC.plot.R ./ QC.Results_MR_P405.png
+```
+
+```{r  echo=FALSE, fig.cap="Results of the fastqc Runs. ", fig.align="center", fig.pos="!ht"}
+filename <- file.path("Figures/QC.Results_MR_P405.png")
+if(exists("filename")){
+  knitr::include_graphics(filename)
+}
+```
+
+
+# Mapping
+
+The Mapping was done using our automated Mapping workflow. STAR	version is - 2.7.7a
+
+# Quantification with `featureCounts`
+
+For the quantification, the tool `fateureCounts` (version @featureCounts) from the `subread` package was used. 
+
+```{r, engine='bash', eval=FALSE}
+featureCounts -T 12 -a $gtf -t exon -g gene_id -M -o quantification/GeneCounts.txt $bamFiles/*.bam >>  quantification/quantification.log 2>&1
+```
+
+
+# Differential Expression Analysis
+
+## Libraries
+
+```{r, message=FALSE, warning=FALSE}
+library("DESeq2")
+library("biomaRt")
+library("AnnotationHub")
+library("RColorBrewer")
+library("viridis")
+library("ggrepel")
+library("EnhancedVolcano")
+library("pheatmap")
+library("tidyverse")
+```
+
+## Read Meta Info
+
+Reading in the data and metadata information
+
+```{r}
+cts <- read.delim2("results/counts/GeneCounts.txt",row.names=1, sep = "\t", skip = 1)
+cts <- cts[,-c(1:5)]
+colnames(cts) <- gsub(pattern = "X.home.yeroslaviz.poolFolders.pool.bcfngs.fastq_files.P405.P405_20210706_PM_MR.mapping.Mmu.GrCm38.star..(.*).bam", 
+                      replacement = "\\1", x = colnames(cts) )
+
+coldata <- read.delim2("metaInfo.txt", row.names=1, colClasses = c("factor","factor","factor" ))
+```
+## Adding gene annotations
+
+As the gene names in both count matrixces are identical this can be done only once and be used by both count matrices. 
+
+### using `AnnotationHub` package
+
+```{r, eval=FALSE}
+# Connect to AnnotationHub
+ah <- AnnotationHub()
+
+# Access the Ensembl database for organism
+ahDb <- query(ah, 
+              pattern = c("Mus musculus", "EnsDb"), 
+              ignore.case = TRUE)
+
+# Acquire the latest annotation files
+id <- ahDb %>%
+        mcols() %>%
+        rownames() %>%
+        tail(n = 1)
+
+# Download the appropriate Ensembldb database
+edb <- ah[[id]]
+
+# Extract gene-level information from database
+annotationsHub <- genes(edb, 
+                     return.type = "data.frame")
+
+# Select annotations of interest
+annotationsHub <- annotationsHub %>%
+        dplyr::select(gene_id, gene_name, seq_name, gene_biotype, description,entrezid)
+
+head(annotationsHub)
+
+saveRDS(annotationsHub, file = "annotationsHub.mmu.RDS" )
+```
+
+```{r,  echo=FALSE}
+annotationsHub <- readRDS(file = "annotationsHub.mmu.RDS")
+```
+
+
+
+
+
