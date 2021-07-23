@@ -1,0 +1,15 @@
+Status	/home/yeroslaviz/poolFolders/pool-bcfngs/fastq_files/P405/P405_20210706_PM_MR/mapping/Mmu.GrCm38/star//A_1.bam	/home/yeroslaviz/poolFolders/pool-bcfngs/fastq_files/P405/P405_20210706_PM_MR/mapping/Mmu.GrCm38/star//A_2.bam	/home/yeroslaviz/poolFolders/pool-bcfngs/fastq_files/P405/P405_20210706_PM_MR/mapping/Mmu.GrCm38/star//A_3.bam	/home/yeroslaviz/poolFolders/pool-bcfngs/fastq_files/P405/P405_20210706_PM_MR/mapping/Mmu.GrCm38/star//C_1.bam	/home/yeroslaviz/poolFolders/pool-bcfngs/fastq_files/P405/P405_20210706_PM_MR/mapping/Mmu.GrCm38/star//C_2.bam	/home/yeroslaviz/poolFolders/pool-bcfngs/fastq_files/P405/P405_20210706_PM_MR/mapping/Mmu.GrCm38/star//C_3.bam	/home/yeroslaviz/poolFolders/pool-bcfngs/fastq_files/P405/P405_20210706_PM_MR/mapping/Mmu.GrCm38/star//CM_1.bam	/home/yeroslaviz/poolFolders/pool-bcfngs/fastq_files/P405/P405_20210706_PM_MR/mapping/Mmu.GrCm38/star//CM_2.bam	/home/yeroslaviz/poolFolders/pool-bcfngs/fastq_files/P405/P405_20210706_PM_MR/mapping/Mmu.GrCm38/star//CM_3.bam	/home/yeroslaviz/poolFolders/pool-bcfngs/fastq_files/P405/P405_20210706_PM_MR/mapping/Mmu.GrCm38/star//M_1.bam	/home/yeroslaviz/poolFolders/pool-bcfngs/fastq_files/P405/P405_20210706_PM_MR/mapping/Mmu.GrCm38/star//M_2.bam	/home/yeroslaviz/poolFolders/pool-bcfngs/fastq_files/P405/P405_20210706_PM_MR/mapping/Mmu.GrCm38/star//M_3.bam	/home/yeroslaviz/poolFolders/pool-bcfngs/fastq_files/P405/P405_20210706_PM_MR/mapping/Mmu.GrCm38/star//T_1.bam	/home/yeroslaviz/poolFolders/pool-bcfngs/fastq_files/P405/P405_20210706_PM_MR/mapping/Mmu.GrCm38/star//T_2.bam	/home/yeroslaviz/poolFolders/pool-bcfngs/fastq_files/P405/P405_20210706_PM_MR/mapping/Mmu.GrCm38/star//T_3.bam	/home/yeroslaviz/poolFolders/pool-bcfngs/fastq_files/P405/P405_20210706_PM_MR/mapping/Mmu.GrCm38/star//TM_1.bam	/home/yeroslaviz/poolFolders/pool-bcfngs/fastq_files/P405/P405_20210706_PM_MR/mapping/Mmu.GrCm38/star//TM_2.bam	/home/yeroslaviz/poolFolders/pool-bcfngs/fastq_files/P405/P405_20210706_PM_MR/mapping/Mmu.GrCm38/star//TM_3.bam
+Assigned	60986913	61495929	54326914	60857587	62695147	57735887	58236720	60073514	52951769	56554751	63351697	69337771	50268300	48795729	75012615	61785852	71560916	61342869
+Unassigned_Unmapped	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Unassigned_Read_Type	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Unassigned_Singleton	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Unassigned_MappingQuality	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Unassigned_Chimera	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Unassigned_FragmentLength	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Unassigned_Duplicate	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Unassigned_MultiMapping	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Unassigned_Secondary	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Unassigned_NonSplit	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Unassigned_NoFeatures	5719446	5251571	4930126	5600747	5813118	5524870	5648375	5875067	4816628	5292011	5849911	6391610	5263697	5130905	7512542	5407387	6690613	5662634
+Unassigned_Overlapping_Length	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Unassigned_Ambiguity	2770995	2792992	2472870	2750582	2841277	2602459	2673685	2750631	2447437	2581348	2898658	3187917	2304059	2233874	3460963	2883499	3324191	2826161

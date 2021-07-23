@@ -1,0 +1,168 @@
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v2.0.1
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 18 BAM files                                     ||
+||                           o A_1.bam                                        ||
+||                           o A_2.bam                                        ||
+||                           o A_3.bam                                        ||
+||                           o C_1.bam                                        ||
+||                           o C_2.bam                                        ||
+||                           o C_3.bam                                        ||
+||                           o CM_1.bam                                       ||
+||                           o CM_2.bam                                       ||
+||                           o CM_3.bam                                       ||
+||                           o M_1.bam                                        ||
+||                           o M_2.bam                                        ||
+||                           o M_3.bam                                        ||
+||                           o T_1.bam                                        ||
+||                           o T_2.bam                                        ||
+||                           o T_3.bam                                        ||
+||                           o TM_1.bam                                       ||
+||                           o TM_2.bam                                       ||
+||                           o TM_3.bam                                       ||
+||                                                                            ||
+||             Output file : GeneCounts.txt                                   ||
+||                 Summary : GeneCounts.txt.summary                           ||
+||              Annotation : Mmu.GrCm38.gtf (GTF)                             ||
+||      Dir for temp files : quantification                                   ||
+||                                                                            ||
+||                 Threads : 12                                               ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : no                                               ||
+||      Multimapping reads : counted                                          ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+\\============================================================================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file Mmu.GrCm38.gtf ...                                    ||
+||    Features : 843712                                                       ||
+||    Meta-features : 55487                                                   ||
+||    Chromosomes/contigs : 45                                                ||
+||                                                                            ||
+|| Process BAM file A_1.bam...                                                ||
+||    WARNING: Paired-end reads were found.                                   ||
+||    Total alignments : 69477354                                             ||
+||    Successfully assigned alignments : 60986913 (87.8%)                     ||
+||    Running time : 0.37 minutes                                             ||
+||                                                                            ||
+|| Process BAM file A_2.bam...                                                ||
+||    WARNING: Paired-end reads were found.                                   ||
+||    Total alignments : 69540492                                             ||
+||    Successfully assigned alignments : 61495929 (88.4%)                     ||
+||    Running time : 0.37 minutes                                             ||
+||                                                                            ||
+|| Process BAM file A_3.bam...                                                ||
+||    WARNING: Paired-end reads were found.                                   ||
+||    Total alignments : 61729910                                             ||
+||    Successfully assigned alignments : 54326914 (88.0%)                     ||
+||    Running time : 0.33 minutes                                             ||
+||                                                                            ||
+|| Process BAM file C_1.bam...                                                ||
+||    WARNING: Paired-end reads were found.                                   ||
+||    Total alignments : 69208916                                             ||
+||    Successfully assigned alignments : 60857587 (87.9%)                     ||
+||    Running time : 0.37 minutes                                             ||
+||                                                                            ||
+|| Process BAM file C_2.bam...                                                ||
+||    WARNING: Paired-end reads were found.                                   ||
+||    Total alignments : 71349542                                             ||
+||    Successfully assigned alignments : 62695147 (87.9%)                     ||
+||    Running time : 0.39 minutes                                             ||
+||                                                                            ||
+|| Process BAM file C_3.bam...                                                ||
+||    WARNING: Paired-end reads were found.                                   ||
+||    Total alignments : 65863216                                             ||
+||    Successfully assigned alignments : 57735887 (87.7%)                     ||
+||    Running time : 0.35 minutes                                             ||
+||                                                                            ||
+|| Process BAM file CM_1.bam...                                               ||
+||    WARNING: Paired-end reads were found.                                   ||
+||    Total alignments : 66558780                                             ||
+||    Successfully assigned alignments : 58236720 (87.5%)                     ||
+||    Running time : 0.36 minutes                                             ||
+||                                                                            ||
+|| Process BAM file CM_2.bam...                                               ||
+||    WARNING: Paired-end reads were found.                                   ||
+||    Total alignments : 68699212                                             ||
+||    Successfully assigned alignments : 60073514 (87.4%)                     ||
+||    Running time : 0.37 minutes                                             ||
+||                                                                            ||
+|| Process BAM file CM_3.bam...                                               ||
+||    WARNING: Paired-end reads were found.                                   ||
+||    Total alignments : 60215834                                             ||
+||    Successfully assigned alignments : 52951769 (87.9%)                     ||
+||    Running time : 0.33 minutes                                             ||
+||                                                                            ||
+|| Process BAM file M_1.bam...                                                ||
+||    WARNING: Paired-end reads were found.                                   ||
+||    Total alignments : 64428110                                             ||
+||    Successfully assigned alignments : 56554751 (87.8%)                     ||
+||    Running time : 0.35 minutes                                             ||
+||                                                                            ||
+|| Process BAM file M_2.bam...                                                ||
+||    WARNING: Paired-end reads were found.                                   ||
+||    Total alignments : 72100266                                             ||
+||    Successfully assigned alignments : 63351697 (87.9%)                     ||
+||    Running time : 0.39 minutes                                             ||
+||                                                                            ||
+|| Process BAM file M_3.bam...                                                ||
+||    WARNING: Paired-end reads were found.                                   ||
+||    Total alignments : 78917298                                             ||
+||    Successfully assigned alignments : 69337771 (87.9%)                     ||
+||    Running time : 0.42 minutes                                             ||
+||                                                                            ||
+|| Process BAM file T_1.bam...                                                ||
+||    WARNING: Paired-end reads were found.                                   ||
+||    Total alignments : 57836056                                             ||
+||    Successfully assigned alignments : 50268300 (86.9%)                     ||
+||    Running time : 0.32 minutes                                             ||
+||                                                                            ||
+|| Process BAM file T_2.bam...                                                ||
+||    WARNING: Paired-end reads were found.                                   ||
+||    Total alignments : 56160508                                             ||
+||    Successfully assigned alignments : 48795729 (86.9%)                     ||
+||    Running time : 0.30 minutes                                             ||
+||                                                                            ||
+|| Process BAM file T_3.bam...                                                ||
+||    WARNING: Paired-end reads were found.                                   ||
+||    Total alignments : 85986120                                             ||
+||    Successfully assigned alignments : 75012615 (87.2%)                     ||
+||    Running time : 0.46 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TM_1.bam...                                               ||
+||    WARNING: Paired-end reads were found.                                   ||
+||    Total alignments : 70076738                                             ||
+||    Successfully assigned alignments : 61785852 (88.2%)                     ||
+||    Running time : 0.38 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TM_2.bam...                                               ||
+||    WARNING: Paired-end reads were found.                                   ||
+||    Total alignments : 81575720                                             ||
+||    Successfully assigned alignments : 71560916 (87.7%)                     ||
+||    Running time : 0.43 minutes                                             ||
+||                                                                            ||
+|| Process BAM file TM_3.bam...                                               ||
+||    WARNING: Paired-end reads were found.                                   ||
+||    Total alignments : 69831664                                             ||
+||    Successfully assigned alignments : 61342869 (87.8%)                     ||
+||    Running time : 0.37 minutes                                             ||
+||                                                                            ||
+|| Write the final count table.                                               ||
+|| Write the read assignment summary.                                         ||
+||                                                                            ||
+|| Summary of counting results can be found in file "quantification/GeneCoun  ||
+|| ts.txt.summary"                                                            ||
+||                                                                            ||
+\\============================================================================//
+
